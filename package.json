@@ -1,0 +1,38 @@
+{
+  "name": "Guess-Who",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "jest",
+    "build": "tsc"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.ts?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RaptorCentauri/Guess-Who.git"
+  },
+  "keywords": [],
+  "author": "RaptorCentauri",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RaptorCentauri/Guess-Who/issues"
+  },
+  "homepage": "https://github.com/RaptorCentauri/Guess-Who#readme",
+  "devDependencies": {
+    "@types/jest": "^26.0.20",
+    "jest": "^26.6.3",
+    "ts-jest": "^26.4.4",
+    "typescript": "^4.1.3"
+  }
+}
