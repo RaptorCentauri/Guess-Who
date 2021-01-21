@@ -37,32 +37,34 @@ class Player{
         return this.myCharacter
     }
 
-    //guess gender
-    guessOpponentGender(guess, oppenentGender){
-        if (guess === oppenentGender) {
-            console.log(`Yes, it is a ${guess}`);
-            this.removeCandidateGender(guess)
+    //guessOppenentCategory()
+    guessOppenentCategory(opponent, category, guess){
+        let oppenentResponse = opponent[`say${category}`]()
+
+        if (guess === oppenentResponse) {
+            console.log('correct guess');
+            this.removeCandidate(category, guess)
         } else {
-            console.log(`No, it is NOT a ${guess}`);
-            this.removeCandidateGenderOpposite(guess)
-            //hide all of guess Gender
+            console.log('wrong guess');
+            this.removeCandidateOpposite(category, guess)
         }
     }
 
-    removeCandidateGender(guess){
-        let newHiddenCandidates = this.currentCandidates.filter( candidate => candidate.sayGender() === guess)
+    removeCandidate(category, guess){
+        let newHiddenCandidates = this.currentCandidates.filter(candidate => candidate[`say${category}`]() === guess)
         this.hiddenCandidates = [...newHiddenCandidates]
 
-        let newCurrentCandidates = this.currentCandidates.filter(candidate => candidate.sayGender() != guess)
+        let newCurrentCandidates = this.currentCandidates.filter(candidate => candidate[`say${category}`]() != guess)
         this.currentCandidates = [...newCurrentCandidates]
     }
 
-    removeCandidateGenderOpposite(guess) {
-        let newHiddenCandidates = this.currentCandidates.filter(candidate => candidate.sayGender() != guess)
+    removeCandidateOpposite(category, guess){
+        let newHiddenCandidates = this.currentCandidates.filter(candidate => candidate[`say${category}`]() != guess)
         this.hiddenCandidates = [...newHiddenCandidates]
 
-        let newCurrentCandidates = this.currentCandidates.filter(candidate => candidate.sayGender() === guess)
+        let newCurrentCandidates = this.currentCandidates.filter(candidate => candidate[`say${category}`]() === guess)
         this.currentCandidates = [...newCurrentCandidates]
+
     }
 
 }
