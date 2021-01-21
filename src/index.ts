@@ -27,18 +27,25 @@ let pOneChar = playerOne.sayMyCharacter();
 let pTwoChar = playerTwo.sayMyCharacter();
 
 
-console.log(pOneChar.sayGender());
-console.log(pTwoChar.sayGender());
+console.log(pOneChar);
+console.log(pTwoChar.sayName());
 
-console.log('p1 current before', playerOne.sayCurrentCandidates());
-
-
+// console.log('p1 current before', playerOne.sayCurrentCandidates());
 
 
-playerOne.guessOpponentGender('man', pTwoChar.sayGender())
+
+
+// playerOne.guessOpponentGender('man', pTwoChar.sayGender())
+
+playerOne.guessOppenentCategory(pTwoChar, 'Gender', 'man')
+// playerOne.guessOppenentCategory('man', 'Glasses', pTwoChar)
+
+
+
+
 // playerOne.guessOpponentGender('woman', pTwoChar.sayGender())
 
-console.log('p1 current after', playerOne.sayCurrentCandidates());
+// console.log('p1 current after', playerOne.sayCurrentCandidates());
 
 
 
