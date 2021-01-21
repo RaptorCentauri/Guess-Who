@@ -1,7 +1,7 @@
 import Character from '../src/logic/character'
 
-const James = new Character('man', false, true,'white','brown');
-const Jenny = new Character('woman', true, false, 'hispanic', 'black');
+const James = new Character(0,'James','man', false, true,'white','brown');
+const Jenny = new Character(1,'Jenny','woman', true, false, 'hispanic', 'black');
 
 
 describe('James', ()=>{
